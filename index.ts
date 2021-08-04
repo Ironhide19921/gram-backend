@@ -38,5 +38,5 @@ mongoose.connect('mongodb+srv://user_gerasgram:subliminal1@micluster.rqbgn.mongo
 
 //Levantar express
 server.start(() => {
-    console.log(`Servidor corriendo en puerto ${ server.port}`);
+    console.log(`Servidor corriendo en puerto ${ process.env.PORT || 3000}`);
 });
