@@ -1,7 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule ? mod : { default: mod };
+  };
 Object.defineProperty(exports, "__esModule", { value: true });
 var server_1 = __importDefault(require("./classes/server"));
 var usuario_1 = __importDefault(require("./routes/usuario"));
@@ -19,15 +21,19 @@ server.app.use(express_fileupload_1.default());
 //Configurar CORS
 server.app.use(cors_1.default({ origin: true, credentials: true }));
 //Rutas de mi app
-server.app.use('/user', usuario_1.default);
-server.app.use('/posts', post_1.default);
+server.app.use("/user", usuario_1.default);
+server.app.use("/posts", post_1.default);
 //Conectar DB
-mongoose_1.default.connect('mongodb://localhost:27017/fotosgram', { useNewUrlParser: true, useCreateIndex: true }, function (err) {
-    if (err)
-        throw err;
-    console.log('Base de datos ONLINE');
-});
+// mongoose_1.default.connect('mongodb://localhost:27017/fotosgram', { useNewUrlParser: true, useCreateIndex: true }, function (err) {
+mongoose_1.default.connect(
+  "mongodb+srv://user_gerasgram:subliminal1@micluster.rqbgn.mongodb.net/gerasgram",
+  { useNewUrlParser: true, useCreateIndex: true },
+  function (err) {
+    if (err) throw err;
+    console.log("Base de datos ONLINE");
+  }
+);
 //Levantar express
 server.start(function () {
-    console.log("Servidor corriendo en puerto " + server.port);
+  console.log("Servidor corriendo en puerto " + server.port);
 });
