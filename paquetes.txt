@@ -1,0 +1,10 @@
+npm install express(crea el noderest)
+npm install body-parser(traduce los post en un objeto javascript)
+npm install cors(asegura peticiones cross domain)
+npm install mongoose(para db)
+npm install express-fileupload(para fotos)
+npm install jsonwebtoken(token)
+npm install bcrypt(encriptar contraseñas)
+
+
+npm install express body-parser cors mongoose express-fileupload jsonwebtoken bcrypt
