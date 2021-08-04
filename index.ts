@@ -25,7 +25,8 @@ server.app.use('/user', userRoutes);
 server.app.use('/posts', postRoutes);
 
 //Conectar DB
-mongoose.connect('mongodb://localhost:27017/fotosgram', 
+// mongoose.connect('mongodb://localhost:27017/fotosgram', 
+mongoose.connect('mongodb+srv://user_gerasgram:subliminal1@micluster.rqbgn.mongodb.net/gerasgram', 
                 { useNewUrlParser: true, useCreateIndex: true }, ( err) => {
                     
                     if( err ) throw err;
